@@ -1,0 +1,119 @@
+set	$red		#bf616a
+set	$green		#a3be8c
+set	$yellow		#ebcb8b
+set	$blue		#81a1c1
+set	$white		#e5e9f0
+set	$bg		#2e3440
+set	$bglighter	#4c566a
+set	$bglight	#3b4252
+set	$mod 		Mod4
+set	$alt 		mod1
+set	$ws1 		""
+set	$ws2 		""
+set	$ws3 		""
+set	$ws4 		""
+set	$ws5 		""
+set	$ws6 		""
+workspace_auto_back_and_forth yes
+exec_always ~/.config/autostart.sh
+popup_during_fullscreen smart
+bindsym --release $mod+bracketright exec playerctl next
+bindsym --release $mod+bracketleft exec playerctl previous
+bindsym --release $mod+apostrophe exec playerctl play-pause
+bindsym $mod+v exec qutebrowser
+bindsym $mod+r exec alacritty -e "vifm"
+bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
+bindsym $mod+b exec telegram-desktop
+bindsym $mod+c exec vlc
+bindsym $mod+s exec spotify
+bindsym $mod+Return exec alacritty
+bindsym $mod+q kill
+bindsym $mod+w exec rofi  -theme ~/rofi/appmenu/drun.rasi -show drun
+#bindsym $mod+r exec xfce4-popup-whiskermenu
+bindsym $mod+n focus left
+bindsym $mod+e focus down
+bindsym $mod+o focus up
+bindsym $mod+i focus right
+bindsym $mod+h exec /usr/bin/discord-canary --proxy-server="socks5://127.0.0.1:9050"
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+o move up
+bindsym $mod+Shift+i move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+f split h
+bindsym $mod+u split v
+bindsym $mod+t fullscreen toggle
+bindsym $mod+j layout tabbed
+bindsym $mod+p layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Control+n resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+e resize grow height 10 px or 10 ppt
+bindsym $mod+Control+o resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+i resize grow width 10 px or 10 ppt
+bindsym $mod+Control+w restart
+bindsym $mod+m exec compton --config ~/.config/compton/compton.conf
+bindsym $mod+Shift+m exec killall compton
+bindsym --release $alt+q exec xkill
+bindsym $mod+l exec nice -10 minecraft-launcher
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+for_window\
+	[\
+	window_type="menu"\
+	window_type="dialog"\
+	window_role="About"\
+	window_role="pop-up"\
+	window_role="bubble"\
+	window_role="task_dialog"\
+	window_role="Preferences"\
+	]floating enable
+default_border pixel 3
+default_floating_border pixel 1
+gaps right 5
+gaps top 5
+gaps bottom 5
+gaps inner 5
+for_window [class="yakuake"] floating enable border none
+for_window [class="Spotify"] border none
+font pango:Accuratist 9
+floating_modifier $mod
+assign	[\
+	class="opera"\
+	class="chromium"\
+	class="firefox"\
+	]$ws2
+assign	[\
+	class="TelegramDesktop"\
+	]$ws3
+assign	[\
+	class="vlc"\
+	class="spotify"\
+	class="mpv"\
+	title="vifm"\
+	]$ws4
+assign [class="Gimp-2.10"] $ws5
+for_window [class="discord"] move to workspace $ws3
+for_window [class="Spotify"] move to workspace $ws4
+#	<colorclass>		<border>	<background>	<text>	<indicator>	<child_border>
+	client.focused 		$red		$red		$bg	$blue		$red
+	client.focused_inactive	$bg		$bg		$white	$bg		$bg
+        client.unfocused  	$bg 		$bglight	$white	$red		$bglighter
+	client.urgent		$yellow		$yellow		$bg	$yellow		$yellow
