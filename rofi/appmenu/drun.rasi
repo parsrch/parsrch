@@ -1,0 +1,97 @@
+configuration {
+  show-icons:                     true;
+  icon-theme:                     "Hey-red-dark";
+  font:                           "NovaRound 9";
+  drun-display-format:            "{name}";
+}
+
+* {
+  background-color:               transparent;
+  background:                     #00000000;
+  background-alt:                 #000000aa;
+  text-color:                     #ffffff;
+  selected-text-color:            #ffffff;
+  primary:                        #A3BE8C;
+  urgent:                         #BF616A;
+}
+
+window {
+  transparency:                   "real";
+  background-color:               @background;
+  height:                         768px;
+  width:                          1024px;
+  location:                       northwest;
+  anchor:                         northwest;
+  x-offset:                       0;
+  y-offset:                       0;
+  border-radius:                  12;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  expand:                         false;
+  width:                          50em;
+  margin:                         50px 20px 50px 4px;
+  border-radius:                  25;
+  padding:                        10px 10px 10px 10px;
+  background-color:               #ffffff20;
+  border:                         0px 0px solid 0px 0px;
+  border-color:                   @text-color;
+  font:                           "NovaRound 10";
+}
+
+
+listview {
+  columns: 6;
+  spacing: 4;
+  dynamic: true;
+}
+
+element {
+  border-radius: 4;
+  orientation: vertical;
+  padding: 30 0 30 0;
+}
+
+
+mainbox {
+  padding: 10px 160px 10px 160px;
+}
+
+element normal.urgent, element alternate.urgent {
+    background-color:               @urgent;
+}
+
+element normal.active, element alternate.active {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+}
+
+element selected {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+    border-radius:                  9;
+}
+
+element selected.urgent {
+    background-color:               @urgent;
+}
+
+element selected.active {
+    background-color:               @background-alt;
+    color:                          @selected-text-color;
+}
+
+element-icon {
+    size:                           48;
+    border:                         0px;
+}
+
+element-text {
+    expand:                         true;
+    horizontal-align:               0.5;
+    margin:                         10px 15px 0px 15px;
+}

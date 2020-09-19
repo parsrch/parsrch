@@ -28,7 +28,7 @@ bindsym $mod+c exec vlc
 bindsym $mod+s exec spotify
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+w exec rofi  -theme ~/rofi/appmenu/drun.rasi -show drun
+bindsym $mod+w exec rofi  -theme ~/.config/rofi/appmenu/drun.rasi -show drun
 #bindsym $mod+r exec xfce4-popup-whiskermenu
 bindsym $mod+n focus left
 bindsym $mod+e focus down
