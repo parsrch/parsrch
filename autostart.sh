@@ -2,7 +2,7 @@
 compton --config ~/.config/compton/compton.conf &
 nitrogen --restore &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-setxkbmap -v workman,ir-parsrch && xset r 66  && setxkbmap -option 'grp:alt_shift_toggle' &&setxkbmap -option caps:Backspace &
+setxkbmap -v workman,ir-parsarch && xset r 66  && setxkbmap -option 'grp:alt_shift_toggle' &&setxkbmap -option caps:backspace &
 killall volumeicon;volumeicon &
 killall nm-applet;nm-applet&
 #killall conky;
