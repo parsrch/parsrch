@@ -8,10 +8,10 @@ set	$bglighter	#4c566a
 set	$bglight	#3b4252
 set	$mod 		Mod4
 set	$alt 		mod1
-set	$ws1 		""
-set	$ws2 		""
-set	$ws3 		""
-set	$ws4 		""
+set	$ws1 		""
+set	$ws2 		"󰈹"
+set	$ws3 		""
+set	$ws4 		""
 set	$ws5 		""
 set	$ws6 		""
 workspace_auto_back_and_forth yes
@@ -20,8 +20,9 @@ popup_during_fullscreen smart
 bindsym --release $mod+bracketright exec playerctl next
 bindsym --release $mod+bracketleft exec playerctl previous
 bindsym --release $mod+apostrophe exec playerctl play-pause
-bindsym $mod+v exec qutebrowser
+bindsym $mod+v exec firefox
 bindsym $mod+r exec alacritty -e "vifm"
+#bindsym $mod+Print exec xfce4-screenshooter
 bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
 bindsym $mod+b exec telegram-desktop
 bindsym $mod+c exec vlc
@@ -34,7 +35,7 @@ bindsym $mod+n focus left
 bindsym $mod+e focus down
 bindsym $mod+o focus up
 bindsym $mod+i focus right
-bindsym $mod+h exec /usr/bin/discord-canary --proxy-server="socks5://127.0.0.1:9050"
+bindsym $mod+h exec sh ~/.config/i3/discord.sh
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+e move down
 bindsym $mod+Shift+o move up
@@ -48,6 +49,7 @@ bindsym $mod+p layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
+bindsym XF86PowerOff exec ./.config/rofi/power/powermenu.sh
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -93,7 +95,7 @@ gaps bottom 5
 gaps inner 5
 for_window [class="yakuake"] floating enable border none
 for_window [class="Spotify"] border none
-font pango:Accuratist 9
+font pango:Nova Round 9
 floating_modifier $mod
 assign	[\
 	class="opera"\

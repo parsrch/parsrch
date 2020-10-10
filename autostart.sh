@@ -9,4 +9,7 @@ killall nm-applet;nm-applet&
 #conky -c ~/.config/conky/syclo/syclo-orange-bottomleft.conkyrc &
 #conky -c ~/.conky/conky-spotify/conky-spotify-medium
 #xinput --set-button-map 8 3 2 1
-searx-run
+searx-run &
+killall xfce4-clipman;
+xfce4-clipman&
+sh ~/.config/polybar/launch.sh&

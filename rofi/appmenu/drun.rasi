@@ -1,16 +1,16 @@
 configuration {
   show-icons:                     true;
-  icon-theme:                     "Hey-red-dark";
+  icon-theme:                     "ePapirus";
   font:                           "NovaRound 9";
   drun-display-format:            "{name}";
 }
 
 * {
   background-color:               transparent;
-  background:                     #00000000;
-  background-alt:                 #000000aa;
-  text-color:                     #ffffff;
-  selected-text-color:            #ffffff;
+  background:                     #2E344066;
+  background-alt:                 #3B4252;
+  text-color:                     #ECEFF4;
+  selected-text-color:            #2E3440;
   primary:                        #A3BE8C;
   urgent:                         #BF616A;
 }
@@ -18,13 +18,15 @@ configuration {
 window {
   transparency:                   "real";
   background-color:               @background;
-  height:                         768px;
-  width:                          1024px;
-  location:                       northwest;
-  anchor:                         northwest;
-  x-offset:                       0;
-  y-offset:                       0;
-  border-radius:                  12;
+  height:                         634px;
+  width:                          337px;
+  location:                       southwest;
+  anchor:                         southwest;
+  x-offset:                       5;
+  y-offset:                       -25;
+  border:                          2px;
+  border-color:                     #4C566A;
+  border-radius:                  10;
 }
 
 prompt {
@@ -33,32 +35,32 @@ prompt {
 
 entry {
   expand:                         false;
-  width:                          50em;
-  margin:                         50px 20px 50px 4px;
+  width:                          20em;
+  margin:                         10px 10px 10px 50px;
   border-radius:                  25;
-  padding:                        10px 10px 10px 10px;
-  background-color:               #ffffff20;
-  border:                         0px 0px solid 0px 0px;
-  border-color:                   @text-color;
+  padding:                        10px 20px 10px 20px;
+  background-color:               #3B4252;
+  border:                         2px 2px solid 2px 2px;
+  border-color:                   #BF616A;
   font:                           "NovaRound 10";
 }
 
 
 listview {
-  columns: 6;
-  spacing: 4;
+  columns: 3;
+  spacing: 8;
   dynamic: true;
 }
 
 element {
-  border-radius: 4;
+  border-radius: 24;
   orientation: vertical;
-  padding: 30 0 30 0;
+  padding: 10 10 10 10;
 }
 
 
 mainbox {
-  padding: 10px 160px 10px 160px;
+  padding: 30px 10px 10px 10px;
 }
 
 element normal.urgent, element alternate.urgent {
@@ -71,9 +73,11 @@ element normal.active, element alternate.active {
 }
 
 element selected {
-    background-color:               @background-alt;
-    color:                          @selected-text-color;
-    border-radius:                  9;
+    background-color:               #5E81AC66;
+    color:                          #D8DEE9;
+    border-radius:                  19;
+    border:                         3;
+    border-color:                   #81A1C1;
 }
 
 element selected.urgent {
@@ -86,12 +90,12 @@ element selected.active {
 }
 
 element-icon {
-    size:                           48;
+    size:                           40;
     border:                         0px;
 }
 
 element-text {
-    expand:                         true;
+    expand:                         false;
     horizontal-align:               0.5;
-    margin:                         10px 15px 0px 15px;
+    margin:                         0px 5px 0px 5px;
 }
