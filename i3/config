@@ -22,8 +22,8 @@ bindsym --release $mod+bracketleft exec playerctl previous
 bindsym --release $mod+apostrophe exec playerctl play-pause
 bindsym $mod+v exec firefox
 bindsym $mod+r exec alacritty -e "vifm"
-#bindsym $mod+Print exec xfce4-screenshooter
-bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
+bindsym $mod+Print exec ~/.config/i3/scsh.sh
+#bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
 bindsym $mod+b exec telegram-desktop
 bindsym $mod+c exec vlc
 bindsym $mod+s exec spotify
