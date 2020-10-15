@@ -97,7 +97,7 @@
   #   #   - (macOS) Menlo
   #   #   - (Linux/BSD) monospace
   #   #   - (Windows) Consolas
-  #   family: Monaco for Powerline 
+  #   family: Monaco for Powerline
   #   # The `style` can be specified to pick a specific face.
   #   style: Regular
   #
@@ -108,7 +108,7 @@
   #   # If the bold family is not specified, it will fall back to the
   #   # value specified for the normal font.
   #
-  #   family: Monaco for Powerline 
+  #   family: Monaco for Powerline
   #   # The `style` can be specified to pick a specific face.
   #   style: Bold
   #
@@ -118,7 +118,7 @@
   #   #
   #   # If the italic family is not specified, it will fall back to the
   #   # value specified for the normal font.
-  #   family: Monaco for Powerline 
+  #   family: Monaco for Powerline
   #
   #   # The `style` can be specified to pick a specific face.
   #   style: Italic
@@ -129,7 +129,7 @@
   #   #
   #   # If the bold italic family is not specified, it will fall back to the
   #   # value specified for the normal font.
-  #   family: Monaco for Powerline 
+  #   family: Monaco for Powerline
   #
   #   # The `style` can be specified to pick a specific face.
   #   style: Bold Italic
@@ -559,26 +559,26 @@
   #print_events: false
 colors:
   primary:
-   background: '0x2E3440'
-   foreground: '0xD8DEE9'
+   background: '#1d1f21'
+   foreground: '#c5c8c6'
   cursor:
-   text: '0x2E3440'
-   cursor: '0xD8DEE9'
+   text: '#c5c8c6'
+   cursor: '#969896'
   normal:
-   black: '0x3B4252'
-   red: '0xBF616A'
-   green: '0xA3BE8C'
-   yellow: '0xEBCB8B'
-   blue: '0x81A1C1'
-   magenta: '0xB48EAD'
-   cyan: '0x88C0D0'
-   white: '0xE5E9F0'
+   black: '#373b41'
+   red: '#cc6666'
+   green: '#b5bd68'
+   yellow: '#f0c674'
+   blue: '#81a2be'
+   magenta: '#b294bb'
+   cyan: '#8abeb7'
+   white: '#c5c8c6'
   bright:
-   black: '0x4C566A'
-   red: '0xBF616A'
-   green: '0xA3BE8C'
-   yellow: '0xEBCB8B'
-   blue: '0x81A1C1'
-   magenta: '0xB48EAD'
-   cyan: '0x8FBCBB'
-   white: '0xECEFF4'
+   black: '#373b41'
+   red: '#de935f'
+   green: '#b5bd68'
+   yellow: '#f0c674'
+   blue: '#81a2be'
+   magenta: '#b294bb'
+   cyan: '#8abeb7'
+   white: '#c5c8c6'
