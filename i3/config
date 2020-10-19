@@ -13,13 +13,16 @@ set	$ws2 		"󰈹"
 set	$ws3 		""
 set	$ws4 		""
 set	$ws5 		""
-set	$ws6 		""
+set	$ws6 		"󰟃"
 workspace_auto_back_and_forth yes
 exec_always ~/.config/autostart.sh
 popup_during_fullscreen smart
-bindsym --release $mod+bracketright exec playerctl next
-bindsym --release $mod+bracketleft exec playerctl previous
-bindsym --release $mod+apostrophe exec playerctl play-pause
+bindsym --release $mod+bracketright exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym --release $mod+shift+bracketright exec playerctl next
+bindsym --release $mod+bracketleft exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym --release $mod+shift+bracketleft exec playerctl previous
+bindsym --release $mod+shift+apostrophe exec playerctl play-pause
+bindsym --release $mod+apostrophe exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym $mod+v exec firefox
 bindsym $mod+r exec alacritty -e "vifm"
 bindsym $mod+Print exec ~/.config/i3/scsh.sh
@@ -56,14 +59,12 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Control+n resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+e resize grow height 10 px or 10 ppt
 bindsym $mod+Control+o resize shrink height 10 px or 10 ppt
