@@ -1,11 +1,11 @@
-set	$red		#cc6666
-set	$green		#b5bd68
-set	$yellow		#f0c674
-set	$blue		#81a2be
-set	$white		#c5c8c6
-set	$bg		#1d1f21
-set	$bglighter	#373b41
-set	$bglight	#282a2e
+set	$red		#bf616a
+set	$green		#a3be8c
+set	$yellow		#ebcb8b
+set	$blue		#81a1c1
+set	$white		#e5e9f0
+set	$bg		    #2e3440
+set	$bglighter	#4c566a
+set	$bglight	#3b4252
 set	$mod 		Mod4
 set	$alt 		mod1
 set	$ws1 		""
@@ -27,7 +27,7 @@ bindsym $mod+v exec firefox
 bindsym $mod+r exec alacritty -e "vifm"
 bindsym $mod+Print exec ~/.config/i3/scsh.sh
 #bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
-bindsym $mod+b exec telegram-desktop
+bindsym $mod+b exec XDG_CURRENT_DESKTOP=gnome telegram-desktop
 bindsym $mod+c exec vlc
 bindsym $mod+s exec spotify
 bindsym $mod+Return exec alacritty
@@ -38,17 +38,17 @@ bindsym $mod+n focus left
 bindsym $mod+e focus down
 bindsym $mod+o focus up
 bindsym $mod+i focus right
-bindsym $mod+h exec sh ~/.config/i3/discord.sh
+bindsym $mod+h exec discord-canary --proxy-server="socks5://127.0.0.1:9050"
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+e move down
 bindsym $mod+Shift+o move up
 bindsym $mod+Shift+i move right
 bindsym $mod+Shift+Left move left
-bindsym $mod+f split h
-bindsym $mod+u split v
+bindsym $mod+u split h
+bindsym $mod+p split v
 bindsym $mod+t fullscreen toggle
-bindsym $mod+j layout tabbed
-bindsym $mod+p layout toggle split
+bindsym $mod+f layout tabbed
+bindsym $mod+semicolon layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
@@ -70,14 +70,15 @@ bindsym $mod+Control+e resize grow height 10 px or 10 ppt
 bindsym $mod+Control+o resize shrink height 10 px or 10 ppt
 bindsym $mod+Control+i resize grow width 10 px or 10 ppt
 bindsym $mod+Control+w restart
-bindsym $mod+m exec compton --config ~/.config/compton/compton.conf
-bindsym $mod+Shift+m exec killall compton
+bindsym $mod+m exec picom
+bindsym $mod+Shift+m exec killall picom
 bindsym --release $alt+q exec xkill
 bindsym $mod+l exec nice -10 minecraft-launcher
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+exec --no-startup-id sh ~/.config/polybar/scripts/updates-pre.sh
 for_window\
 	[\
 	window_type="menu"\
@@ -94,6 +95,7 @@ gaps right 5
 gaps top 5
 gaps bottom 5
 gaps inner 5
+smart_borders on
 for_window [class="yakuake"] floating enable border none
 for_window [class="Spotify"] border none
 font pango:Nova Round 9
@@ -116,7 +118,7 @@ assign [class="Gimp-2.10"] $ws5
 for_window [class="discord"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws4
 #	<colorclass>		<border>	<background>	<text>	<indicator>	<child_border>
-	client.focused 		$red		$red		$bg	$blue		$red
+	client.focused 		$red		$red		$white	$blue		$red
 	client.focused_inactive	$bg		$bg		$white	$bg		$bg
         client.unfocused  	$bg 		$bglight	$white	$red		$bglighter
 	client.urgent		$yellow		$yellow		$bg	$yellow		$yellow
