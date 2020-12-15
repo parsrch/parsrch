@@ -1,3 +1,4 @@
 #!/bin/bash
-sleep 1000&&yay -Sy;
-sh ~/.config/polybar/scripts/updates-pre.sh
+while true;do
+    sleep 3600&&sudo pacman -Sy;
+done

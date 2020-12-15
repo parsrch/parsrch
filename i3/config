@@ -8,12 +8,12 @@ set	$bglighter	#4c566a
 set	$bglight	#3b4252
 set	$mod 		Mod4
 set	$alt 		mod1
-set	$ws1 		""
-set	$ws2 		"󰈹"
-set	$ws3 		""
-set	$ws4 		""
-set	$ws5 		""
-set	$ws6 		"󰟃"
+set	$ws1 		" "
+set	$ws2 		"󰈹 "
+set	$ws3 		" "
+set	$ws4 		" "
+set	$ws5 		" "
+set	$ws6 		"󰟃 "
 workspace_auto_back_and_forth yes
 exec_always ~/.config/autostart.sh
 popup_during_fullscreen smart
@@ -27,12 +27,12 @@ bindsym $mod+v exec firefox
 bindsym $mod+r exec alacritty -e "vifm"
 bindsym $mod+Print exec ~/.config/i3/scsh.sh
 #bindsym $mod+Print exec scrot -q 100 '%Y-%m-%d_%H:%m:%S.png' -e 'mv $f ~/shots/'
-bindsym $mod+b exec XDG_CURRENT_DESKTOP=gnome telegram-desktop
+bindsym $mod+b exec XDG_CURRENT_DESKTOP=gnome telegram
 bindsym $mod+c exec vlc
 bindsym $mod+s exec spotify
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+w exec rofi  -theme ~/.config/rofi/appmenu/drun.rasi -show drun
+bindsym $mod+w exec sh ~/.config/rofi/appmenu/launcher.sh
 #bindsym $mod+r exec xfce4-popup-whiskermenu
 bindsym $mod+n focus left
 bindsym $mod+e focus down
@@ -52,7 +52,8 @@ bindsym $mod+semicolon layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
-bindsym XF86PowerOff exec ./.config/rofi/power/powermenu.sh
+bindsym XF86PowerOff exec ./.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Control+q exec ./.config/rofi/powermenu/powermenu.sh
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -89,7 +90,8 @@ for_window\
 	window_role="task_dialog"\
 	window_role="Preferences"\
 	]floating enable
-default_border pixel 3
+for_window [class="firefox"]border pixel 3
+default_border none
 default_floating_border pixel 1
 gaps right 5
 gaps top 5
@@ -107,18 +109,14 @@ assign	[\
 	]$ws2
 assign	[\
 	class="TelegramDesktop"\
-	]$ws3
-assign	[\
-	class="vlc"\
-	class="spotify"\
-	class="mpv"\
-	title="vifm"\
-	]$ws4
+	class="Telegram"\
+	class="KotatogramDesktop"\
+    class="discord"\
+         ]$ws3
 assign [class="Gimp-2.10"] $ws5
-for_window [class="discord"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws4
-#	<colorclass>		<border>	<background>	<text>	<indicator>	<child_border>
-	client.focused 		$red		$red		$white	$blue		$red
-	client.focused_inactive	$bg		$bg		$white	$bg		$bg
-        client.unfocused  	$bg 		$bglight	$white	$red		$bglighter
-	client.urgent		$yellow		$yellow		$bg	$yellow		$yellow
+#	<colorclass>		    <border>	<background>    <text>	<indicator>	<child_border>
+	client.focused 		    $red		$red		    $white	$blue		$red
+	client.focused_inactive	$bg		    $bg		        $white	$bg		    $bg
+    client.unfocused  	    $bg 		$bglight	    $white	$red		$bglighter
+	client.urgent		    $yellow		$yellow		    $bg	    $yellow		$yellow
