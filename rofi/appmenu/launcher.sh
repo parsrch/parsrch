@@ -23,4 +23,4 @@ sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
 # comment these lines to disable random style
 themes=($(ls -p --hide="launcher.sh" --hide="styles" $dir))
 
-rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
+rofi -show drun -modi drun -theme $dir/"$theme" -hover-select -me-select-entry '' -me-accept-entry 'MousePrimary'
